@@ -2,7 +2,16 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fauth0%2Fauth0-cordova.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fauth0%2Fauth0-cordova?ref=badge_shield)
 
 
-Library to make it easy to integrate Auth0 login in your Cordova applications.
+A minor modification to auth0/cordova for implementing the PKCE flow to allow it to function without deploying on a device.
+
+The current implementation relies on the `InAppWebBrowser` whereas this modification will use the regular `window.open` if nothing else is available
+
+ If you follow the auth0/cordova documentation you will need to get to the point in the flow where you will be redirected back to your application you will need to copy the redirect url from the console and run auth0's `onRedirectUri` function, providing the url as a parameter.
+
+
+---------- Existing README below ----------
+
+Library to make it easy to integrate Auth0 login in your Cordova applications. 
 
 ## Requirements
 
