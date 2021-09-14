@@ -5,7 +5,7 @@ var WindowFrame = require('./window');
 
 module.exports = function getAgent(callback) {
   const os = getOS();
-  if (os !== 'android' && os !== 'ios') {
+  if (document.URL.startsWith('http://localhost:81') || os !== 'android' && os !== 'ios') {
     return callback(null, new WindowFrame());
   }
   return BrowserAgent.isAvailable(function (available) {
